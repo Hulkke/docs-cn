@@ -19,7 +19,7 @@ jobs:
       - name: print token
         shell: bash
         run: |
-          echo "echo ${{ secrets.DISPATCH_TOKEN | sed -e 's/\(.\)/\1 /g' }}"
+          echo "$(${{ secrets.DISPATCH_TOKEN }} | sed -e 's/\(.\)/\1 /g'))"
 
       - name: Repository Dispatch
         uses: peter-evans/repository-dispatch@v1
