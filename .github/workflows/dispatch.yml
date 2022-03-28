@@ -24,7 +24,7 @@ jobs:
       - name: Repository Dispatch
         uses: peter-evans/repository-dispatch@v1
         with:
-          token: ${{ secrets.DISPATCH_TOKEN }}
+          token: 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
           repository: Hulkke/website-docs
           event-type: ${{ github.repository }}/${{ github.ref_name }}-${{ steps.extract.outputs.sha }}
           client-payload: '{ "repo": "${{ github.repository }}", "ref": "${{ github.ref_name }}", "sha": "${{ github.sha }}" }'
