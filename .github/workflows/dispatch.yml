@@ -16,10 +16,10 @@ jobs:
         run: |
           echo "::set-output name=sha::$(sha=${{ github.sha }}; echo ${sha:0:6})"
 
-      - name: print token
-        shell: bash
-        run: |
-          echo "$(${{ secrets.DISPATCH_TOKEN }} | sed -e 's/\(.\)/\1 /g'))"
+      # - name: print token
+      #   shell: bash
+      #   run: |
+      #     echo "$(${{ secrets.DISPATCH_TOKEN }} | sed -e 's/\(.\)/\1 /g'))"
 
       - name: Repository Dispatch
         uses: peter-evans/repository-dispatch@v1
